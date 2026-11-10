@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #FFF7F5;
+    color: #5C3D4E;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Delicate Pastel Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FFF7F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #EABECB;
+    border-radius: 9999px;
+    border: 2px solid #FFF7F5;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #BA4C70;
+  }
+}
+
+/* Scrapbook & Paper Textures */
+.paper-texture {
+  background-color: #FFFAF8;
+  background-image: radial-gradient(#F2C8D1 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+.scrapbook-grid {
+  background-image:
+    linear-gradient(to right, rgba(223, 169, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(223, 169, 184, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.notebook-lines {
+  background-image: repeating-linear-gradient(transparent,
+      transparent 27px,
+      #F2C8D1 28px);
+  line-height: 28px;
+}
+
+/* Washi Tape Effects */
+.washi-tape-pink {
+  background: rgba(242, 200, 209, 0.75);
+  box-shadow: 0 1px 3px rgba(141, 104, 120, 0.15);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+.washi-tape-lavender {
+  background: rgba(233, 221, 243, 0.8);
+  box-shadow: 0 1px 3px rgba(141, 104, 120, 0.15);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+.washi-tape-cream {
+  background: rgba(255, 247, 245, 0.9);
+  box-shadow: 0 1px 3px rgba(141, 104, 120, 0.15);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(223, 169, 184, 0.4);
+  border-right: 2px dashed rgba(223, 169, 184, 0.4);
+}
+
+/* Envelope 3D Fold Styles */
+.envelope-shadow {
+  box-shadow: 0 25px 50px -12px rgba(141, 104, 120, 0.25), 0 0 0 1px rgba(242, 200, 209, 0.4);
+}
+
+/* Candle flame animations */
+@keyframes flameFlicker {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(255, 183, 77, 0.9));
+  }
+
+  25% {
+    transform: scale(1.08, 0.92) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(255, 152, 0, 0.95));
+  }
+
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 7px rgba(255, 204, 128, 0.85));
+  }
+
+  75% {
+    transform: scale(1.04, 0.96) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 10px rgba(255, 171, 64, 0.9));
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 0.6s infinite ease-in-out alternate;
+  transform-origin: bottom center;
+}
+
+/* Smoke puff after blow */
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-40px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-smoke {
+  animation: smokeRise 1.8s forwards ease-out;
+}
+
+/* Twinkle Stars */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(15deg);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s infinite ease-in-out;
+}
